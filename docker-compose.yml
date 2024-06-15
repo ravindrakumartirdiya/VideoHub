@@ -1,0 +1,14 @@
+
+
+services:
+  mongo:
+    image: mongo
+    restart: always
+    container_name: mongo
+    ports:
+      - 8000 : 8000 # make sure we don't have another mongo container running on same port
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: RktHits
+      MONGO_INITDB_ROOT_PASSWORD: Ravi2212
+    volumes:
+      - ./db_data/:/data/db/
